@@ -1,0 +1,36 @@
+/* SignInWithMicrosoft.css */
+
+.WindowContainer {
+    /* Styles for the WindowContainer */
+    margin: auto;
+    width: 50%;
+    padding: 20px;
+    background: #a70034;
+    border-radius: 12px;
+
+}
+
+.topText {
+    /* Styles for the topText */
+    color: white;
+    text-align: center;
+}
+
+.SchoolText {
+    /* Styles for the SchoolText */
+    color: white;
+    text-align: center;
+}
+
+.LogInButton {
+    /* Styles for the LogInButton */
+    background-color: #8a8d8f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    width: 40%;
+}

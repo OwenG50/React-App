@@ -1,4 +1,4 @@
-import {buttonClick} from "../components/buttonClick";
+import {buttonClick} from "../../components/Universal/buttonClick";
 
 export function Page4(){
     return(

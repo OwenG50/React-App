@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import {Link, Routes, Route} from "react-router-dom";
-import {Page1} from "./pages/Page1"
-import {Page2} from "./pages/Page2"
-import {Page3} from "./pages/Page3"
-import {Page4} from "./pages/Page4"
+import {Page1} from "./pages/TestPages/Page1"
+import {Page2} from "./pages/TestPages/Page2"
+import {Page3} from "./pages/TestPages/Page3"
+import {Page4} from "./pages/TestPages/Page4"
 
 function App() {
   return (
