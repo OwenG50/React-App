@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: white; /* or any color you prefer */
+    padding: 10px;
+
+}
+
+.container img {
+    height: 100px; /* adjust as needed */
+    width: auto;
+    margin-right: 0px;
+}
+
+.container h1 {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; /* removes default margin */
+}
+
+.container button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #a70034;
+    width: 100px;
+    height: 50px;
+    border-radius: 12px;
+    color: white;
+}
