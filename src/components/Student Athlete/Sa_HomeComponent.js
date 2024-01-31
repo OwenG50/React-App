@@ -1,9 +1,12 @@
+import '../Student Athlete/styles/SaHome.css'
+
 function SaHome(){
 
     return(
-        <div>
-            <h1>This is the Student Athlete Home component</h1>
-        </div>
+            <div class="SaHome">
+                <button class="button">Search Library</button>
+                <button class="button"> My Reservations</button>
+            </div>
     )
 
 }

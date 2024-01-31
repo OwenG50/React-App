@@ -1,8 +1,13 @@
+import '../Work Study/styles/WSHome.css'
+
 function WsHomeComponent(){
 
     return(
-        <div>
-            <h1>This is the Work Study Home Component</h1>
+        <div className="WSHome">
+            <button className="button">Search Library</button>
+            <button className="button">Inventory</button>
+            <button className="button">Reservations</button>
+            <button className="button">Check In / Out</button>
         </div>
     )
 

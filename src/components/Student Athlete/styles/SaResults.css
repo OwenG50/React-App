@@ -1,0 +1,101 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the book listings horizontally */
+    justify-content: flex-start; /* Aligns the content to the top */
+    width: 100%; /* Ensures the main container takes full width */
+}
+
+.search-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.back-button {
+    background-color: white; /* Adjust the button color to match the header */
+    border-radius: 12px;
+    color: black;
+    font-size: 15px;
+    border: none;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back-button .search-icon {
+    margin-right: 5px;
+    width: 20px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+}
+
+
+.results-count {
+    margin: 0 auto; /* Centers the results count horizontally */
+}
+
+.home-button {
+    background-color: #a70034;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 12px; /* Adjust for rounded corners */
+    cursor: pointer;
+}
+
+.results-count{
+    display: flex;
+    color: white;
+    width: 90%;
+    max-width: 1000px; /* keep same as .book-listing */
+}
+
+.book-listing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* This will separate the left and right sides */
+    background-color: lightgrey;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+    width: 90%;
+    max-width: 1000px;
+}
+
+.book-cover {
+    width: 100px; /* Adjust based on your design */
+    height: auto;
+    /* Removed margin-right as it will be handled by the book-info padding */
+    padding-left: 20px;
+}
+
+.book-info {
+    flex-grow: 1; /* Allows the book info to grow and fill the space */
+    padding: 0 20px; /* Adds spacing inside the book info */
+}
+
+.book-info h2, .book-info p {
+    margin: 5px 0;
+}
+
+.book-condition {
+    display: flex;
+    flex-direction: column; /* Aligns condition and availability in a column */
+    align-items: flex-start; /* Aligns the content to the right */
+    padding-right: 50px;
+}
+
+.stars {
+    color: #a70034; /* Color for the stars */
+    margin: 5px 0; /* Adds margin around the stars */
+    font-size: 30px;
+}
+
+/* Additional styles for the condition and availability text */
+.book-condition p {
+    margin: 0; /* Removes margin from paragraphs in the condition section */
+}

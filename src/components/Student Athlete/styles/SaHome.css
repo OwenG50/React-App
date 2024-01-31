@@ -1,0 +1,31 @@
+/* Styles for the whole page */
+body {
+    background: #8a8d8f;
+}
+
+
+.parentContainer{
+
+}
+/* Styles for the container */
+.SaHome {
+    display: flex;
+    flex-direction: column; /* Stacks children (buttons) vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    height: 100%;
+}
+
+/* Styles for each button */
+.button {
+    background-color: #a70034;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 10px; /* Adjusted to add space between buttons */
+    width: 40%;
+    font-size: 20pt;
+}
+

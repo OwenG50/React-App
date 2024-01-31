@@ -1,0 +1,62 @@
+/* Styles for the SaSearch container */
+/* Styles for the SaSearch container */
+.SaSearch {
+    position: relative; /* This makes it the positioning context for absolutely positioned children */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Styles for the Home button */
+.HomeButton {
+    position: absolute;
+    top: 10px; /* Adjust as needed for your design */
+    left: 10px; /* Adjust as needed for your design */
+    background-color: #a70034;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px; /* Optional for rounded corners */
+    cursor: pointer;
+    z-index: 10; /* Ensures it's above other elements */
+}
+
+.SearchInput {
+    background-color: transparent; /* Makes the input's background the same as its container */
+    border: none; /* Removes the default border */
+    color: #a0a0a0; /* Greyed out text color */
+    margin-left: 10px; /* Spacing between icon and text */
+    width: 100%; /* Ensures the input field occupies the remaining space */
+    outline: none; /* Removes the highlight border on focus */
+    font-size: 20pt;
+}
+
+
+/* Styles for the Search Bar Container */
+.SearchBarContainer {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0; /* Slightly darker grey for the container */
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners for the search bar */
+    margin-top: 20% ;
+    width: fit-content;
+    max-width: 100%;
+}
+
+/* Styles for the Search Icon - now an img inside a div */
+.SearchIcon img {
+    width: 24px; /* Adjust based on your icon's size */
+    height: 24px; /* Adjust based on your icon's size */
+    cursor: pointer;
+}
+
+/* Styles for the Search Text */
+.SearchText {
+    color: #a0a0a0; /* Greyed out text */
+    margin-left: 10px; /* Spacing between icon and text */
+    font-style: italic; /* Optional: if you want italicized 'placeholder' text */
+}
+
