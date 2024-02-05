@@ -8,7 +8,7 @@ import Ws_Scan from "../../components/Work Study/Ws_Scan";
 export function Page2(){
     return(
         <div>
-            <Ws_Scan></Ws_Scan>
+
         </div>
     );
 }

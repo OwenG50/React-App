@@ -1,17 +1,27 @@
-import React from "react";
-import Webcam from "react-webcam";
+import React from 'react';
+import { QrReader, useQrReader } from 'react-qr-reader';
 
+function Ws_Scan() {
+  const handleScan = data => {
+    if (data) {
+      console.log('Result: ', data);
+    }
+  }
 
-function Ws_Scan(){
+  const handleError = err => {
+    console.error(err);
+  }
 
-    return(
-        <div>
-            <Webcam height={600} width={600}/>
-            <button onClick={Webcam.openCamera}> Open Camera</button>
-            <button onClick={Webcam.closeCamera}> Stop Camera</button>
-        </div>
-    )
-
+  return (
+    <div>
+      <QrReader
+        delay={300}
+        onError={handleError}
+        onScan={handleScan}
+        style={{ width: '100%' }}
+      />
+    </div>
+  );
 }
 
 export default Ws_Scan;
