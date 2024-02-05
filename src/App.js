@@ -16,11 +16,11 @@ function App() {
       <Header/>
       <ul>
         <li>
-          <Link to="/">Home</Link> <br></br>
-          <Link to="/WS_CheckIn">WsCheckIn</Link> <br></br>
-          <Link to="/page2">Page 2</Link> <br></br>
-          <Link to="/page3">Page 3</Link> <br></br>
-          <Link to="page4">Page 4</Link> <br></br>
+          <Link to="/">Home </Link> 
+          <Link to="/WS_CheckIn">WsCheckIn </Link> 
+          <Link to="/page2">Page 2 </Link>
+          <Link to="/page3">Page 3 </Link> 
+          <Link to="page4">Page 4 </Link> 
         </li>
       </ul>
     </nav>
