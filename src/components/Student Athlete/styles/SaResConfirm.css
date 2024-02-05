@@ -1,0 +1,56 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the book listings horizontally */
+    justify-content: flex-start; /* Aligns the content to the top */
+    width: 100%; /* Ensures the main container takes full width */
+}
+
+.search-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    box-sizing: border-box;
+}
+
+.back-button {
+    background-color: white; /* Adjust the button color to match the header */
+    border-radius: 12px;
+    color: black;
+    font-size: 15px;
+    border: none;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back-button .search-icon {
+    margin-right: 5px;
+    width: 20px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+}
+
+.complete{
+    text-align: center;
+    background-color: #a70034;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+    width: 50%;
+    max-width: 1000px;
+    color: white;
+}
+
+.complete-header{
+    font-size: 33pt;
+}
+
+.num{
+    font-size: 15pt;
+}
+
+
