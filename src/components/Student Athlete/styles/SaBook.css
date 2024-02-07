@@ -77,11 +77,21 @@
 .book-info {
     flex-grow: 1; /* Allows the book info to grow and fill the space */
     padding: 0 20px; /* Adds spacing inside the book info */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 80%;
 }
 
 .book-info h2, .book-info p {
     margin: 5px 0;
+    white-space: normal; /* Allows the text to wrap */
+    overflow: hidden; /* Ensures content that overflows is hidden, may not be necessary with wrapping */
+    text-overflow: ellipsis; /* Adds an ellipsis to indicate clipped text, may not apply as expected with wrapping */
+    word-break: break-word; /* Ensures long words do not cause overflow */
+    max-width: 80%;
 }
+
 
 .book-condition {
     display: flex;
@@ -102,12 +112,15 @@
 }
 
 .Reserve {
-    flex-grow: 1;
+    /* Use flex-grow if you want the button to expand to fill available space, or set a width */
+    width: 150px; /* Example fixed width, adjust as needed */
     background-color: #a70034;
     color: white;
-    padding: 20px 10px;
-    border-radius: 12px; /* Adjust for rounded corners */
+    padding: 10px; /* Adjust padding to ensure text is vertically aligned */
+    border-radius: 12px;
     cursor: pointer;
     font-size: 14pt;
-    justify-content: center;
+    text-align: center; /* Ensures the text within the button is centered */
+    /* Remove flex-grow if you're setting a width, or adjust as needed for your layout */
 }
+

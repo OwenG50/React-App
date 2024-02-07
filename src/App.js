@@ -7,9 +7,10 @@ import {Page2} from "./pages/TestPages/Page2"
 import {Page3} from "./pages/TestPages/Page3"
 import {Page4} from "./pages/TestPages/Page4"
 import {Header} from "./components/Universal/Header";
-
+import React, {useState} from 'react';
 
 function App() {
+
   return (
     <>
     <nav>
@@ -20,7 +21,7 @@ function App() {
           <Link to="/WS_CheckIn">WsCheckIn </Link> 
           <Link to="/page2">Page 2 </Link>
           <Link to="/page3">Page 3 </Link> 
-          <Link to="page4">Page 4 </Link> 
+          <Link to="page4">PullDataTest</Link>
         </li>
       </ul>
     </nav>
