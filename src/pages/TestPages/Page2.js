@@ -6,12 +6,12 @@ import Ws_Search from "../../components/Work Study/Ws_Search";
 import Ws_Scan from "../../components/Work Study/Ws_Scan";
 import Sa_Book from "../../components/Student Athlete/Sa_Book";
 import CreateBookListings from "../../components/Universal/CreateBookListings";
-import BookListings from "../../components/Universal/CreateBookListings";
+import Login from "../../components/Universal/userLogin";
 
 export function Page2(){
     return(
         <div>
-            <BookListings/>
+            <Login/>
         </div>
     );
 }
