@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { QrReader, useQrReader } from 'react-qr-reader';
+import { v4 as uuidv4 } from 'uuid';
 import '../Work Study/styles/WSHome.css'
+
 
 function WsAddBookForm() {
     const [title, setTitle] = useState('');
@@ -8,6 +10,7 @@ function WsAddBookForm() {
     const [edition, setEdition] = useState('');
     const [author, setAuthor] = useState('');
     const [bookCondition, setConditionValue] = useState('SelectCondition');
+    const [buttonShow, setButtonShow] = useState(true);
    
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
@@ -30,33 +33,45 @@ function WsAddBookForm() {
     }
 
     const handleSubmit = (event) => {
-        alert('The Book you have entered is: ' + title);
-        //event.preventDefault(); //prevents the page from refreshing 
+        setButtonShow(false);
+        const bookUID = uuidv4();
+        alert('The Book you have entered is: ' + title + 'With UID: ' + bookUID);
+        event.preventDefault(); //prevents the page from refreshing 
     }
 
+    function clearForm() {
+        //window.location.reload(false);
+        setTitle('');
+        setISBN('');
+        setEdition('');
+        setAuthor('');
+        setConditionValue('SelectCondition');
+        setButtonShow(true);
+      }
+
     return (
-        <div>
+        <div className="WSForm">
             <form onSubmit={handleSubmit}>
                 <label>
                     ISBN: <br/>
                     <input type="text" name="isbn" value={isbn} onChange={handleISBNChange} />
                 </label>
-                <br/><br/>
+                
                 <label>
                     Title: <br/>
                     <input type="text" name="title" value={title} onChange={handleTitleChange} />
                 </label>
-                <br/><br/>
+                
                 <label>
                     Edition (e.g "First Edition"):<br/>
                     <input type="text" name="edition" value={edition} onChange={handleEditionChange}/>
                 </label>
-                <br/><br/>
+                
                 <label>
                     Author: <br/>
                     <input type="text" name="author" value={author} onChange={handleAuthorChange}/>
                 </label>
-                <br/><br/>
+                
                 <label>
                     Condition: <br/>
                     <select value={bookCondition} onChange={bookCondionSelected}>
@@ -69,10 +84,12 @@ function WsAddBookForm() {
                         <option value="veryGood">Very Good/ New</option>
                     </select>
                 </label>
-                <br/><br/>
-                <input className="button" type="submit" value="Add to Library" />
+                <br/>
+                {buttonShow && <input className="button" type="submit" value="Add to Library" />}
             </form>
-        </div>
+            <button className="button" onClick={clearForm}>Refresh</button>
+            </div>
+            
     );
 }
 

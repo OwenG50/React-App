@@ -1,12 +1,12 @@
 /* Styles for the whole page */
-body {
-    background: #8a8d8f;
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This will center the book listings horizontally */
+    justify-content: flex-start; /* Aligns the content to the top */
+    width: 100%; /* Ensures the main container takes full width */
 }
 
-
-.parentContainer{
-
-}
 /* Styles for the container */
 .WSHome {
     display: flex;
@@ -27,4 +27,15 @@ body {
     margin: 10px; /* Adjusted to add space between buttons */
     width: 40%;
     font-size: 20pt;
+}
+
+.WSForm {
+    display: flex;
+    flex-direction: column;
+    width: 50% !important;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+
 }
