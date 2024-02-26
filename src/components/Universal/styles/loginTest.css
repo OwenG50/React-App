@@ -4,7 +4,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 5%;
+  width: 50%;
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+  background: #a70034;
+  border-radius: 12px;
+}
+
+.LoginContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+  background: #a70034;
+  border-radius: 12px;
 }
 
   .registration,
@@ -17,6 +34,7 @@
   
   h1 {
     text-align: center;
+    color: white;
   }
   
   label {
@@ -24,18 +42,17 @@
     margin-bottom: 10px;
     
   }
-  
-  input[type="text"],
   input[type="password"],
   input[type="email"] {
     width: auto;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
+    color: white;
   }
   
   button {
-    background-color: #a70034;
+    background-color: grey;
     color: white;
     padding: 10px;
     border: none;
@@ -47,6 +64,6 @@
   }
   
   button:hover {
-    background-color: #940130;
+    background-color: darkgrey;
   }
   

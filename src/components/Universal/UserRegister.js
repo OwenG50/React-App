@@ -3,9 +3,8 @@ import "./styles/loginTest.css"
 
 function UserRegistration() {
     const [formData, setFormData] = useState({
-        username: '',
-        password: '',
         email: '',
+        password: '',
     });
     const [registrationStatus, setRegistrationStatus] = useState('');
     const [passwordError, setPasswordError] = useState('');
@@ -60,9 +59,8 @@ function UserRegistration() {
                     setRegistrationStatus('');
                 }, 3000);
                 setFormData({
-                    username: '',
-                    password: '',
                     email: '',
+                    password: '',
                 });
             } else {
                 // You might want to parse the response here to provide more detailed error messages
@@ -80,11 +78,11 @@ function UserRegistration() {
             <form onSubmit={handleSubmit}>
             <h1>Create an Account:</h1>
                 <div>
-                    <label>Username:</label>
+                    <label>Email:</label>
                     <input
-                        type="text"
-                        name="username"
-                        value={formData.username}
+                        type="email"
+                        name="email"
+                        value={formData.email}
                         onChange={handleChange}
                         required
                     />
@@ -99,16 +97,6 @@ function UserRegistration() {
                         required
                     />
                     {passwordError && <p>{passwordError}</p>}
-                </div>
-                <div>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
                 </div>
                 <button type="submit">Register</button>
             </form>

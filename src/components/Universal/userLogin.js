@@ -66,6 +66,7 @@ function Login() {
 
     return (
         <div className="LoginContainer">
+            <h1>Login:</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Email:</label>
