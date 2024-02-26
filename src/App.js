@@ -22,9 +22,9 @@ function App() {
         <li>
           <Link to="/">Home </Link> 
           <Link to="/WS_CheckIn">WsCheckIn </Link> 
-          <Link to="/page2">Page 2 </Link>
-          <Link to="/page3">Page 3 </Link> 
-          <Link to="page4">PullDataTest</Link>
+          <Link to="/page2">Login Test</Link>
+          <Link to="/page3">Add Book Test </Link>
+          <Link to="page4">Book Display Test</Link>
         </li>
       </ul>
     </nav>

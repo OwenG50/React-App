@@ -1,10 +1,9 @@
-import {buttonClick} from "../../components/Universal/buttonClick";
-import PullDataTest from "../../components/Universal/PullDataTest";
+import CreateBookListings from "../../components/Universal/CreateBookListings";
 
 export function Page4(){
     return(
         <div>
-            <PullDataTest/>
+            <CreateBookListings/>
         </div>
     );
 }

@@ -43,7 +43,7 @@ function UserRegistration() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://u5zs3f9b78.execute-api.us-east-1.amazonaws.com/initialstage/Users', {
+            const response = await fetch('https://1va05bceqi.execute-api.us-east-1.amazonaws.com/initialstage/UserRegister', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json', // Ensures the payload is treated as JSON

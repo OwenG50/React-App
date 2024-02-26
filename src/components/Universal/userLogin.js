@@ -1,69 +1,92 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import "./styles/loginTest.css";
 
 function Login() {
-    const [usernameReg, setUsernameReg] = useState('');
-    const [passwordReg, setPasswordReg] = useState('');
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    });
+    // Combined state for messages
+    const [message, setMessage] = useState({ text: '', isError: false });
 
-    const register = () => {
-        fetch('http://localhost:3000/page2', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                username: usernameReg,
-                password: passwordReg
-            })
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            // Optionally, you can clear the input fields after successful registration
-            setUsernameReg('');
-            setPasswordReg('');
-            return response.json();
-        })
-        .then(data => {
-            console.log('User registered successfully:', data);
-            // Optionally, provide feedback to the user about successful registration
-        })
-        .catch(error => {
-            console.error('Error registering:', error);
-            // Optionally, provide feedback to the user about registration failure
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
         });
-    }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log('Submitting form...');
+
+        // Clear previous messages
+        setMessage({ text: '', isError: false });
+
+        try {
+            const response = await fetch('https://a8j9qmdd57.execute-api.us-east-1.amazonaws.com/initialStage/UserLoginResource', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: formData.email,
+                    password: formData.password,
+                }),
+            });
+
+            const data = await response.json();
+            console.log('Response received:', data);
+            //console.log(data.body)
+
+            if (data.statusCode === 200){
+                //Print login successful
+            }
+            else if(data.statusCode === 401){
+                //print data.body
+            }
+
+
+
+        } catch (error) {
+            console.error('Login request failed:', error);
+            setMessage({ text: 'Failed to login due to a network error.', isError: true });
+        }
+    };
+
+
 
     return (
-        <div className="App">
-            <div className="registration">
-                <h1>Registration</h1>
-                <label>Username</label>
-                <input
-                    type="text"
-                    value={usernameReg}
-                    onChange={(e) => {
-                        setUsernameReg(e.target.value);
-                    }}
-                />
-                <label>Password</label>
-                <input
-                    type="password"
-                    value={passwordReg}
-                    onChange={(e) => {
-                        setPasswordReg(e.target.value);
-                    }}
-                />
-                <button onClick={register}>Register</button>
-            </div>
-
-            <div className="login">
-                <h1>Login</h1>
-                <input type="text" placeholder="Username..." />
-                <input type="password" placeholder="Password..." />
-                <button>Login</button>
-            </div>
+        <div className="LoginContainer">
+            <form onSubmit={handleSubmit}>
+                <h1>Login:</h1>
+                <div>
+                    <label>Email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Password:</label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            {/* Display message with conditional class for error */}
+            {message.text && (
+                <p className={message.isError ? 'error' : ''}>{message.text}</p>
+            )}
         </div>
     );
 }
