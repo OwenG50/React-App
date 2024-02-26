@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import "./styles/loginTest.css";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 function Login() {
     const [formData, setFormData] = useState({
         email: '',
         password: '',
     });
-    // Combined state for messages
+
     const [message, setMessage] = useState({ text: '', isError: false });
+
+    const navigate = useNavigate(); // Instantiate the useNavigate hook
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -38,17 +41,22 @@ function Login() {
 
             const data = await response.json();
             console.log('Response received:', data);
-            //console.log(data.body)
 
-            if (data.statusCode === 200){
-                //Print login successful
+            if (data.statusCode === 200) {
+                // Success message
+                setMessage({ text: 'Login Successful', isError: false });
+                navigate('/page4'); //TODO Change redirect location after successful login
+            } else if (data.statusCode === 401 && data.body === "{\"message\":\"Incorrect password\"}") {
+                // Fail message (Wrong PW)
+                setMessage({ text: 'Incorrect password. Please try again.', isError: true });
+            } else if (data.statusCode === 401 && data.body === "{\"message\":\"An account with this email does not exist\"}"){
+                //Fail message (no matching email found)
+                setMessage({ text: 'An account with this email does not exist.', isError: true });
             }
-            else if(data.statusCode === 401){
-                //print data.body
+            else {
+                // Handle other statuses or generic error
+                setMessage({ text: 'An error occurred. Please try again later.', isError: true });
             }
-
-
-
         } catch (error) {
             console.error('Login request failed:', error);
             setMessage({ text: 'Failed to login due to a network error.', isError: true });
@@ -56,11 +64,9 @@ function Login() {
     };
 
 
-
     return (
         <div className="LoginContainer">
             <form onSubmit={handleSubmit}>
-                <h1>Login:</h1>
                 <div>
                     <label>Email:</label>
                     <input
@@ -80,13 +86,13 @@ function Login() {
                         onChange={handleChange}
                         required
                     />
+                    {/* Display message here, under the password field */}
+                    {message.text && (
+                        <p className={message.isError ? 'error' : ''}>{message.text}</p>
+                    )}
                 </div>
                 <button type="submit">Login</button>
             </form>
-            {/* Display message with conditional class for error */}
-            {message.text && (
-                <p className={message.isError ? 'error' : ''}>{message.text}</p>
-            )}
         </div>
     );
 }
