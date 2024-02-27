@@ -8,39 +8,47 @@ function UserRegistration() {
     });
     const [registrationStatus, setRegistrationStatus] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const [emailError, setEmailError] = useState('');
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         let errorMessage = '';
 
         if (name === 'password') {
-            // Check if password is at least 8 characters long
+            // Password validation logic
             if (value.length < 8) {
                 errorMessage = 'Password must be at least 8 characters long.';
-            } else {
-                // Check if password includes a number
-                const hasNumber = /\d/.test(value);
-                if (!hasNumber) {
-                    errorMessage = 'Password must include a number.';
-                }
-
-                // Check if password includes a symbol
-                const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(value);
-                if (!hasSymbol) {
-                    errorMessage = 'Password must include a symbol.';
-                }
+            } else if (!/\d/.test(value)) {
+                errorMessage = 'Password must include a number.';
+            } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(value)) {
+                errorMessage = 'Password must include a symbol.';
             }
+        } else if (name === 'email') {
+            // Email validation logic
+            if (!value.endsWith('@mail.sacredheart.edu')) {
+                errorMessage = 'Email must end with @mail.sacredheart.edu';
+            } else {
+                errorMessage = ''; // Clear email error if email format is correct
+            }
+            setEmailError(errorMessage);
         }
 
         setFormData({
             ...formData,
             [name]: value,
         });
-        setPasswordError(errorMessage);
+        if (name === 'password') {
+            setPasswordError(errorMessage);
+        }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        // You can perform further validation here before submitting the form
+        if (!formData.email.endsWith('@mail.sacredheart.edu')) {
+            setEmailError('Email must end with @mail.sacredheart.edu');
+            return;
+        }
         try {
             const response = await fetch('https://1va05bceqi.execute-api.us-east-1.amazonaws.com/initialstage/UserRegister', {
                 method: 'POST',
@@ -86,6 +94,7 @@ function UserRegistration() {
                         onChange={handleChange}
                         required
                     />
+                    {emailError && <p>{emailError}</p>}
                 </div>
                 <div>
                     <label>Password:</label>

@@ -8,6 +8,10 @@ function Login() {
         password: '',
     });
 
+    const handleSignIn = () => {
+        navigate("/register");
+    };
+
     const [message, setMessage] = useState({ text: '', isError: false });
 
     const navigate = useNavigate(); // Instantiate the useNavigate hook
@@ -94,8 +98,16 @@ function Login() {
                 </div>
                 <button type="submit">Login</button>
             </form>
+            <div>
+            <a href="#" className="register" onClick={handleSignIn}>
+                Need an account? Register Here
+            </a>
+
+            </div>
         </div>
+ 
     );
 }
 
 export default Login;
+

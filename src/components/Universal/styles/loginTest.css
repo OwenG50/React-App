@@ -48,7 +48,7 @@
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
-    color: white;
+    color: black;
   }
   
   button {
@@ -65,5 +65,10 @@
   
   button:hover {
     background-color: darkgrey;
+  }
+
+  .register{
+    color:white;
+    
   }
   

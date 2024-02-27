@@ -37,6 +37,7 @@ function App() {
       <Route path="/page4" element={<Page4></Page4>}></Route>
       <Route path="/" element={<SignInWithMicrosoft/>} />
       <Route path="/register" element={<UserRegistration/>} />
+      <Route path="/page2" element={<userLogin/>} />
     </Routes>
 
     </>
