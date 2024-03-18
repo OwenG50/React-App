@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { QrReader, useQrReader } from 'react-qr-reader';
+import QRCode from 'react-qr-code';
 import { v4 as uuidv4 } from 'uuid';
 import '../Work Study/styles/WSHome.css'
-
 
 function WsAddBookForm() {
     const [title, setTitle] = useState('');
@@ -11,7 +10,9 @@ function WsAddBookForm() {
     const [author, setAuthor] = useState('');
     const [bookCondition, setConditionValue] = useState('SelectCondition');
     const [buttonShow, setButtonShow] = useState(true);
-   
+    const [bookUID, setBookUID] = useState('');
+    const [submitted, setSubmitted] = useState(false);
+
     const handleTitleChange = (event) => {
         setTitle(event.target.value);
     };
@@ -28,30 +29,29 @@ function WsAddBookForm() {
         setAuthor(event.target.value);
     };
     
-    const bookCondionSelected = (event) => {
+    const bookConditionSelected = (event) => {
         setConditionValue(event.target.value);
     }
 
     const handleSubmit = (event) => {
-        setButtonShow(false);
-        const bookUID = uuidv4();
-        alert('The Book you have entered is: ' + title + 'With UID: ' + bookUID);
-        // put everything in a json object
-        //create a qr code from the json data 
-        //display the qr code 
-        //make a way to print it? 
         event.preventDefault(); //prevents the page from refreshing 
+        setButtonShow(false);
+        const newBookUID = uuidv4();
+        setBookUID(newBookUID);
+        alert('The Book you have entered is: ' + title + 'With UID: ' + newBookUID);
+        setSubmitted(true);
     }
 
     function clearForm() {
-        //window.location.reload(false);
         setTitle('');
         setISBN('');
         setEdition('');
         setAuthor('');
         setConditionValue('SelectCondition');
         setButtonShow(true);
-      }
+        setBookUID('');
+        setSubmitted(false);
+    }
 
     return (
         <div className="WSForm">
@@ -78,7 +78,7 @@ function WsAddBookForm() {
                 
                 <label>
                     Condition: <br/>
-                    <select value={bookCondition} onChange={bookCondionSelected}>
+                    <select value={bookCondition} onChange={bookConditionSelected}>
                         <option value="SelectCondition">Select a Condition</option>
                         <option value="unusable">Unusable</option>
                         <option value="veryPoor">Very Poor</option>
@@ -91,9 +91,9 @@ function WsAddBookForm() {
                 <br/>
                 {buttonShow && <input className="button" type="submit" value="Add to Library" />}
             </form>
+            {submitted && <QRCode value={bookUID} />}
             <button className="button" onClick={clearForm}>Refresh</button>
-            </div>
-            
+        </div>
     );
 }
 
