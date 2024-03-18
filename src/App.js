@@ -11,6 +11,8 @@ import React, {useState} from 'react';
 import userRegister from "./components/Universal/UserRegister";
 import UserRegistration from "./components/Universal/UserRegister";
 import SignInWithMicrosoft from "./components/Universal/SignInWithMicrosoft";
+import WorkStudyHome from './pages/TestPages/WSHomePage';
+import WsAddBookForm from './components/Work Study/Ws_AddBook';
 
 function App() {
 
@@ -38,6 +40,8 @@ function App() {
       <Route path="/" element={<SignInWithMicrosoft/>} />
       <Route path="/register" element={<UserRegistration/>} />
       <Route path="/page2" element={<userLogin/>} />
+      <Route path="/WSHomePage" element={<WorkStudyHome></WorkStudyHome>}></Route>
+      <Route path="/WS_AddBook.js" element={<WsAddBookForm></WsAddBookForm>}></Route>
     </Routes>
 
     </>

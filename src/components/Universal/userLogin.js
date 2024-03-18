@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./styles/loginTest.css";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import WorkStudyHome from '../../pages/TestPages/WSHomePage';
 
 function Login() {
     const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ function Login() {
             if (data.statusCode === 200) {
                 // Success message
                 setMessage({ text: 'Login Successful', isError: false });
-                navigate('/page4'); //TODO Change redirect location after successful login
+                navigate('/WSHomePage'); //Redirects to home page after successful login 
             } else if (data.statusCode === 401 && data.body === "{\"message\":\"Incorrect password\"}") {
                 // Fail message (Wrong PW)
                 setMessage({ text: 'Incorrect password. Please try again.', isError: true });
