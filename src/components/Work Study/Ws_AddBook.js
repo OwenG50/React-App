@@ -36,6 +36,10 @@ function WsAddBookForm() {
         setButtonShow(false);
         const bookUID = uuidv4();
         alert('The Book you have entered is: ' + title + 'With UID: ' + bookUID);
+        // put everything in a json object
+        //create a qr code from the json data 
+        //display the qr code 
+        //make a way to print it? 
         event.preventDefault(); //prevents the page from refreshing 
     }
 
