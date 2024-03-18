@@ -13,6 +13,7 @@ import UserRegistration from "./components/Universal/UserRegister";
 import SignInWithMicrosoft from "./components/Universal/SignInWithMicrosoft";
 import WorkStudyHome from './pages/TestPages/WSHomePage';
 import WsAddBookForm from './components/Work Study/Ws_AddBook';
+import BookListings from "./components/Universal/CreateBookListings";
 
 function App() {
 
@@ -20,15 +21,6 @@ function App() {
     <>
     <nav>
       <Header/>
-      <ul>
-        <li>
-          <Link to="/">Home </Link> 
-          <Link to="/WS_CheckIn">WsCheckIn </Link> 
-          <Link to="/page2">Login Test</Link>
-          <Link to="/page3">Add Book Test </Link>
-          <Link to="page4">Book Display Test</Link>
-        </li>
-      </ul>
     </nav>
 
     <Routes>
@@ -37,11 +29,12 @@ function App() {
       <Route path="/page2" element={<Page2></Page2>}></Route>
       <Route path="/page3" element={<Page3></Page3>}></Route>
       <Route path="/page4" element={<Page4></Page4>}></Route>
-      <Route path="/" element={<SignInWithMicrosoft/>} />
+      <Route path="/SignInWithMicrosoft" element={<SignInWithMicrosoft></SignInWithMicrosoft>}></Route>
       <Route path="/register" element={<UserRegistration/>} />
       <Route path="/page2" element={<userLogin/>} />
       <Route path="/WSHomePage" element={<WorkStudyHome></WorkStudyHome>}></Route>
       <Route path="/WS_AddBook.js" element={<WsAddBookForm></WsAddBookForm>}></Route>
+      <Route path="BookListings" element={<BookListings></BookListings>}></Route>
     </Routes>
 
     </>

@@ -21,8 +21,8 @@
     margin: 0; /* removes default margin */
 }
 
-.container button {
-    position: absolute;
+.logOutButton {
+    flex: auto;
     right: 10px;
     top: 10px;
     background: #a70034;
@@ -30,4 +30,17 @@
     height: 50px;
     border-radius: 12px;
     color: white;
+    max-width: 100px;
+}
+
+.home{
+    flex: auto;
+    right: 300px;
+    top: 10px;
+    background: #a70034;
+    width: 100px;
+    height: 50px;
+    border-radius: 12px;
+    color: white;
+    max-width: 100px;
 }

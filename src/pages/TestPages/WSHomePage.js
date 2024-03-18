@@ -5,7 +5,7 @@ function WorkStudyHome() {
     const navigate = useNavigate();
 
     function searchLibrary() {
-        
+        navigate('/BookListings')
     };
 
     function libraryInventory() {
