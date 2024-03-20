@@ -50,6 +50,7 @@ function Login() {
             if (data.statusCode === 200) {
                 // Success message
                 setMessage({ text: 'Login Successful', isError: false });
+                console.log("User logged in as: " + formData.email);
                 navigate('/WSHomePage'); //Redirects to home page after successful login 
             } else if (data.statusCode === 401 && data.body === "{\"message\":\"Incorrect password\"}") {
                 // Fail message (Wrong PW)

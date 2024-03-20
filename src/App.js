@@ -14,6 +14,7 @@ import SignInWithMicrosoft from "./components/Universal/SignInWithMicrosoft";
 import WorkStudyHome from './pages/TestPages/WSHomePage';
 import WsAddBookForm from './components/Work Study/Ws_AddBook';
 import BookListings from "./components/Universal/CreateBookListings";
+import Login from "./components/Universal/userLogin";
 
 function App() {
 
@@ -24,6 +25,9 @@ function App() {
     </nav>
 
     <Routes>
+      {/* If a Route is not working make sure the name for element is
+       the same as the functions export name and not the file itself, the path name can be whatever we want but
+       the route name must match */}
       <Route path="/" element={<SignIn></SignIn>}></Route>
       <Route path="/WS_CheckIn" element={<WS_CheckIn></WS_CheckIn>}></Route>
       <Route path="/page2" element={<Page2></Page2>}></Route>
@@ -31,7 +35,7 @@ function App() {
       <Route path="/page4" element={<Page4></Page4>}></Route>
       <Route path="/SignInWithMicrosoft" element={<SignInWithMicrosoft></SignInWithMicrosoft>}></Route>
       <Route path="/register" element={<UserRegistration/>} />
-      <Route path="/page2" element={<userLogin/>} />
+      <Route path="/Login" element={<Login></Login>}></Route>
       <Route path="/WSHomePage" element={<WorkStudyHome></WorkStudyHome>}></Route>
       <Route path="/WS_AddBook.js" element={<WsAddBookForm></WsAddBookForm>}></Route>
       <Route path="BookListings" element={<BookListings></BookListings>}></Route>

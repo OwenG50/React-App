@@ -13,7 +13,7 @@ function BookListings() {
 
                 if (response.ok) {
                     const data = await response.json(); // Parses the response data as JSON
-                    console.log(data);
+                    //console.log(data);
                     // Since the actual books data is a stringified array within the `body` property, parse it to get the array
                     if (data.body) {
                         const booksArray = JSON.parse(data.body);

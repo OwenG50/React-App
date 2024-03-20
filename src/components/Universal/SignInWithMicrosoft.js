@@ -6,7 +6,7 @@ function SignInWithMicrosoft() {
 
     const handleSignIn = () => {
         // Navigate to UserRegistration component
-        navigate("/page2");
+        navigate("/Login");
     };
 
     return (
@@ -19,6 +19,8 @@ function SignInWithMicrosoft() {
             </button>
         </div>
     );
+
+
 }
 
 export default SignInWithMicrosoft;
