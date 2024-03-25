@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import PittCenter from "./Pitt Center.jpg";
 import {BrowserRouter, Link, Routes, Route} from "react-router-dom";
 import {SignIn} from "./pages/TestPages/SignIn"
 import {WS_CheckIn} from "./pages/TestPages/WS_CheckIn"

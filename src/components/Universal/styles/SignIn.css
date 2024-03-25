@@ -3,9 +3,10 @@
 .WindowContainer {
     /* Styles for the WindowContainer */
     margin: auto;
-    width: 50%;
+    margin-top: 10%;
+    width: 30%;
     padding: 20px;
-    background: #a70034;
+    background-color: rgba(167, 0, 52, .8);
     border-radius: 12px;
 
 }
