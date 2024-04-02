@@ -4,18 +4,24 @@ import '../Work Study/styles/WS_Scan.css'
 
 function Ws_Scan() {
     const [QrData, setQrData] = useState(null);
+    const [bookUID, setBookUID] = useState('');
 
     const handleScan = data => {
     if (data) {
       console.log('Result: ', data);
       setQrData(data);
+
     }
     else {
         console.log('No QR Code Visible'); 
         setQrData(null);
+
     }
   }
 
+  const resetScanner = () => {
+
+  }
   const handleError = err => {
     console.error(err);
   }
@@ -24,8 +30,6 @@ function Ws_Scan() {
     <div className="WSScan">
       <QrReader
         delay={300}
-        //onError={handleError}
-        //onScan={handleScan}
         onResult={handleScan}
       />
       {QrData && (
@@ -33,6 +37,9 @@ function Ws_Scan() {
           <p>QR Code Data:</p>
           <p>{QrData.text}</p>
         </div>
+      )}
+      {QrData !== null && (
+        <button onClick={resetScanner}>Scan Again</button>
       )}
     </div>
   );

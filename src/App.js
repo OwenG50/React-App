@@ -16,6 +16,7 @@ import WorkStudyHome from './pages/TestPages/WSHomePage';
 import WsAddBookForm from './components/Work Study/Ws_AddBook';
 import BookListings from "./components/Universal/CreateBookListings";
 import Login from "./components/Universal/userLogin";
+import Ws_Scan from './components/Work Study/Ws_Scan';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
       <Route path="/Login" element={<Login></Login>}></Route>
       <Route path="/WSHomePage" element={<WorkStudyHome></WorkStudyHome>}></Route>
       <Route path="/WS_AddBook.js" element={<WsAddBookForm></WsAddBookForm>}></Route>
+      <Route path="/WS_Scan.js" element={<Ws_Scan></Ws_Scan>}></Route>
       <Route path="BookListings" element={<BookListings></BookListings>}></Route>
     </Routes>
 

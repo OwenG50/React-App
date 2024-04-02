@@ -22,6 +22,7 @@ function WorkStudyHome() {
     };
 
     function checkOut() {
+        navigate('/WS_Scan.js')
 
     };
 
