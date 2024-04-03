@@ -7,7 +7,7 @@
   width: 30%;
   margin: auto;
   padding: 20px;
-  background: #a70034;
+  background-color: rgba(167, 0, 52, .8);
   border-radius: 12px;
   margin-top: 10%;
 }
@@ -19,7 +19,7 @@
   width: 30%;
   margin: auto;
   padding: 20px;
-  background: #a70034;
+  background-color: rgba(167, 0, 52, .8);
   border-radius: 12px;
   margin-top: 10%;
 }

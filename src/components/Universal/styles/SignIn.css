@@ -31,8 +31,9 @@
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    display: block;
-    margin: auto;
     width: 40%;
     font-size: 20pt;
+    display: block;
+    margin: 8px auto; /* Center the button horizontally */
 }
+

@@ -59,12 +59,15 @@
     align-items: center;
     justify-content: space-between; /* This will separate the left and right sides */
     background-color: lightgrey;
-    margin: 10px;
+    margin: 10px auto; /* Center horizontally by setting margin-left and margin-right to auto */
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
     width: 90%;
     max-width: 1000px;
+    max-height: 100vh;
+    overflow-y: scroll;
 }
+
 
 .book-cover {
     width: 100px; /* Adjust based on your design */
@@ -124,3 +127,8 @@
     /* Remove flex-grow if you're setting a width, or adjust as needed for your layout */
 }
 
+.scroll{
+    max-height: 100vh;
+    overflow-y: scroll;
+
+}

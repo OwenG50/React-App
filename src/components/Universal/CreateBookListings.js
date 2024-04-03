@@ -57,7 +57,7 @@ function BookListings() {
 
 
     return (
-        <div>
+        <div className='scroll'>
             {books.map((book, index) => (
                 <div key={index} className="book-listing">
                     <div>
