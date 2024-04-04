@@ -55,6 +55,10 @@ function BookListings() {
         fetchBooks();
     }, []);
 
+    function ReserveBook(bookId) {
+
+    }
+
 
     return (
         <div className='scroll'>
@@ -78,7 +82,7 @@ function BookListings() {
                         <p>Currently Available: {book.status}</p>
                     </div>
                     <div>
-                        <button className='Reserve'>Reserve Now</button>
+                        <button onClick={() => ReserveBook(book.id)} className='Reserve'>Reserve Now</button>
                     </div>
                 </div>
             ))}
