@@ -64,8 +64,6 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
     width: 90%;
     max-width: 1000px;
-    max-height: 100vh;
-    overflow-y: scroll;
 }
 
 
