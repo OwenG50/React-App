@@ -39,9 +39,6 @@ function WorkStudyHome() {
             <button className="LogInButton" onClick={searchLibrary}>
                 Search Library
             </button>
-            <button className="LogInButton" onClick={libraryInventory}>
-                Library Inventory 
-            </button>
             <button className="LogInButton" onClick={addBook}>
                 Add Book
             </button>
