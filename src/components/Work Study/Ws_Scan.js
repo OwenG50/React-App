@@ -9,7 +9,7 @@ function Ws_Scan() {
     const handleScan = data => {
     if (data) {
       console.log('Result: ', data);
-      setQrData(data);
+      setQrData(data.txt);
 
     }
     else {
@@ -27,19 +27,19 @@ function Ws_Scan() {
   }
 
   return (
-    <div className="WSScan">
+    <div className="WSScan" style={{ width: '50%', height: 'auto' }}>
       <QrReader
         delay={300}
         onResult={handleScan}
       />
-      {QrData && (
-        <div>
-          <p>QR Code Data:</p>
-          <p>{QrData.text}</p>
-        </div>
-      )}
+      
       {QrData !== null && (
+        
+        <div>
+        <p>QR Code Data:</p>
+        <p>{QrData}</p>
         <button onClick={resetScanner}>Scan Again</button>
+        </div>
       )}
     </div>
   );
