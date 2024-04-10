@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
 import { QrReader, useQrReader } from 'react-qr-reader';
 import '../Work Study/styles/WS_Scan.css'
+import { useNavigate } from 'react-router-dom';
+
 
 function Ws_Scan() {
     const [QrData, setQrData] = useState(null);
     const [bookUID, setBookUID] = useState('');
+    const navigate = useNavigate();
 
     const handleScan = data => {
     if (data) {
       console.log('Result: ', data);
       setQrData(data.text);
+      navigate('/WS_Scan_Reslts.js');
+      QrReader.reactivate()
+
 
     }
     else {
@@ -20,6 +26,7 @@ function Ws_Scan() {
   }
 
   const resetScanner = () => {
+
 
   }
   const handleError = err => {
