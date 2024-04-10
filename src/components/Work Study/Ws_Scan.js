@@ -9,7 +9,7 @@ function Ws_Scan() {
     const handleScan = data => {
     if (data) {
       console.log('Result: ', data);
-      setQrData(data.txt);
+      setQrData(data.text);
 
     }
     else {
@@ -34,7 +34,7 @@ function Ws_Scan() {
       />
       
       {QrData !== null && (
-        
+
         <div>
         <p>QR Code Data:</p>
         <p>{QrData}</p>
