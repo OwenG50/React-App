@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import QRCode from 'react-qr-code';
 import { v4 as uuidv4 } from 'uuid';
-import '../Work Study/styles/WSHome.css'
+import './styles/WSAddBook.css'
 
 function WsAddBookForm() {
     const [title, setTitle] = useState('');
