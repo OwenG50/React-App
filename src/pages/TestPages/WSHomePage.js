@@ -18,7 +18,7 @@ function WorkStudyHome() {
     };
 
     function removeBook() {
-
+        navigate ('/RemoveBookFromLibrary.js');
     };
 
     function checkOut() {

@@ -18,6 +18,7 @@ import BookListings from "./components/Universal/CreateBookListings";
 import Login from "./components/Universal/userLogin";
 import Ws_Scan from './components/Work Study/Ws_Scan';
 import WS_Scan_Results from './components/Work Study/WS_Scan_Results.js';
+import BookDeleteComponent from "./components/Work Study/RemoveBookFromLibrary";
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
       <Route path="/WS_Scan.js" element={<Ws_Scan></Ws_Scan>}></Route>
       <Route path="BookListings" element={<BookListings></BookListings>}></Route>
       <Route path="/WS_Scan_Results.js" element={<WS_Scan_Results></WS_Scan_Results>}></Route>
+      <Route path="/RemoveBookFromLibrary.js" element={<BookDeleteComponent></BookDeleteComponent>}></Route>
     </Routes>
 
     </>
