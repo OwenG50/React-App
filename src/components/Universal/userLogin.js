@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import "./styles/loginTest.css";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import WorkStudyHome from '../../pages/TestPages/WSHomePage';
+import WorkStudyHome from '../../pages/TestPages (DO NOT USE THESE)/WSHomePage';
 
 function Login() {
     const [formData, setFormData] = useState({
         email: '',
         password: '',
+        user_id: '',
     });
 
     const handleSignIn = () => {
@@ -48,9 +49,18 @@ function Login() {
             console.log('Response received:', data);
 
             if (data.statusCode === 200) {
+                // Parse the body to get data from DB
+                const responseBody = JSON.parse(data.body);
+
                 // Success message
                 setMessage({ text: 'Login Successful', isError: false });
                 console.log("User logged in as: " + formData.email);
+                console.log("User logged in as: " + responseBody.user_id);
+
+                //Store userEmail and UUID in localStorage upon login success
+                sessionStorage.setItem('userEmail', formData.email);
+                sessionStorage.setItem('userID', responseBody.user_id);
+
                 navigate('/WSHomePage'); //Redirects to home page after successful login 
             } else if (data.statusCode === 401 && data.body === "{\"message\":\"Incorrect password\"}") {
                 // Fail message (Wrong PW)

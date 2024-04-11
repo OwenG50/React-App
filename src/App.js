@@ -2,17 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import PittCenter from "./Pitt Center.jpg";
 import {BrowserRouter, Link, Routes, Route} from "react-router-dom";
-import {SignIn} from "./pages/TestPages/SignIn"
-import {WS_CheckIn} from "./pages/TestPages/WS_CheckIn"
-import {Page2} from "./pages/TestPages/Page2"
-import {Page3} from "./pages/TestPages/Page3"
-import {Page4} from "./pages/TestPages/Page4"
+import {SignIn} from "./pages/TestPages (DO NOT USE THESE)/SignIn"
+import {WS_CheckIn} from "./pages/TestPages (DO NOT USE THESE)/WS_CheckIn"
+import {Page2} from "./pages/TestPages (DO NOT USE THESE)/Page2"
+import {Page3} from "./pages/TestPages (DO NOT USE THESE)/Page3"
+import {Page4} from "./pages/TestPages (DO NOT USE THESE)/Page4"
 import {Header} from "./components/Universal/Header";
 import React, {useState} from 'react';
 import userRegister from "./components/Universal/UserRegister";
 import UserRegistration from "./components/Universal/UserRegister";
 import SignInWithMicrosoft from "./components/Universal/SignInWithMicrosoft";
-import WorkStudyHome from './pages/TestPages/WSHomePage';
+import WorkStudyHome from './pages/TestPages (DO NOT USE THESE)/WSHomePage';
 import WsAddBookForm from './components/Work Study/Ws_AddBook';
 import BookListings from "./components/Universal/CreateBookListings";
 import Login from "./components/Universal/userLogin";

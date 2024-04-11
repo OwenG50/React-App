@@ -6,6 +6,16 @@
     width: 100%; /* Ensures the main container takes full width */
 }
 
+.Reserve:disabled {
+    background-color: #cccccc; /* Greyed out background */
+    color: #666666; /* Dim text color */
+    cursor: not-allowed; /* Change cursor to indicate the button is disabled */
+}
+
+.Reserve:not(:disabled):hover {
+    background-color: #b3003b; /* Slightly darker red on hover for enabled button */
+}
+
 .search-header {
     display: flex;
     align-items: center;
@@ -17,7 +27,7 @@
 }
 
 .back-button {
-    background-color: white; /* Adjust the button color to match the header */
+    background-color: grey; /* Adjust the button color to match the header */
     border-radius: 12px;
     color: black;
     font-size: 15px;
