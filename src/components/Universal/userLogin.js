@@ -8,11 +8,14 @@ function Login() {
         email: '',
         password: '',
         user_id: '',
+        role: '',
     });
 
     const handleSignIn = () => {
         navigate("/register");
     };
+
+    const role = sessionStorage.getItem('role');
 
     const [message, setMessage] = useState({ text: '', isError: false });
 
@@ -56,23 +59,30 @@ function Login() {
                 setMessage({ text: 'Login Successful', isError: false });
                 console.log("User logged in as: " + formData.email);
                 console.log("User logged in as: " + responseBody.user_id);
-
-                //redirecting based on roles **doesnt work atm need to update!!!!!!!!!!!
-                if (data.role === 'admin') {
-                    navigate('/admin/dashboard');
-                } else if (data.role === 'student') {
-                    navigate('/SAHome');
-                } else if (data.role === 'work study') {
-                    navigate('/src/pages/TestPages (DO NOT USE THESE)/WSHomePage.js');
-                } else {
-                    setMessage({ text: 'Unknown role.', isError: true });
-                }
+                console.log(responseBody.role);
 
                 //Store userEmail and UUID in localStorage upon login success
                 sessionStorage.setItem('userEmail', formData.email);
                 sessionStorage.setItem('userID', responseBody.user_id);
+                sessionStorage.setItem('role', responseBody.role);
 
-                navigate('/WSHomePage'); //Redirects to home page after successful login 
+
+                
+                //redirecting based on roles **doesnt work atm need to update!!!!!!!!!!!
+                if (responseBody.role === 'admin') {
+                    navigate('/admin');
+                } else if (responseBody.role === 'student') {
+                    navigate('/SaHome');
+                } else if (responseBody.role === 'work study') {
+                    navigate('/WSHomePage');
+                } else {
+                    setMessage({ text: 'Unknown role.', isError: true });
+                }
+
+
+               
+
+
             } else if (data.statusCode === 401 && data.body === "{\"message\":\"Incorrect password\"}") {
                 // Fail message (Wrong PW)
                 setMessage({ text: 'Incorrect password. Please try again.', isError: true });
