@@ -57,6 +57,17 @@ function Login() {
                 console.log("User logged in as: " + formData.email);
                 console.log("User logged in as: " + responseBody.user_id);
 
+                //redirecting based on roles **doesnt work atm need to update!!!!!!!!!!!
+                if (data.role === 'admin') {
+                    navigate('/admin/dashboard');
+                } else if (data.role === 'student') {
+                    navigate('/SAHome');
+                } else if (data.role === 'work study') {
+                    navigate('/src/pages/TestPages (DO NOT USE THESE)/WSHomePage.js');
+                } else {
+                    setMessage({ text: 'Unknown role.', isError: true });
+                }
+
                 //Store userEmail and UUID in localStorage upon login success
                 sessionStorage.setItem('userEmail', formData.email);
                 sessionStorage.setItem('userID', responseBody.user_id);

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./styles/RemoveBook.css";
 
 function BookDeleteComponent() {
     const [UUID, setUUID] = useState('');
@@ -34,7 +35,7 @@ function BookDeleteComponent() {
     };
 
     return (
-        <div>
+        <div className='Removeform'>
             <input
                 type="text"
                 value={UUID}
