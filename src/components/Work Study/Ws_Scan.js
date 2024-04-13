@@ -4,31 +4,25 @@ import '../Work Study/styles/WS_Scan.css'
 import { useNavigate } from 'react-router-dom';
 
 
+
 function Ws_Scan() {
     const [QrData, setQrData] = useState(null);
-    const [bookUID, setBookUID] = useState('');
     const navigate = useNavigate();
 
     const handleScan = data => {
     if (data) {
       console.log('Result: ', data);
       setQrData(data.text);
-      navigate('/WS_Scan_Reslts.js');
-      QrReader.reactivate()
-
-
+      sessionStorage.setItem('QrData', data.text);
+      navigate('/WS_Scan_Results.js');
+      QrReader.deactivate()
     }
     else {
         console.log('No QR Code Visible'); 
         setQrData(null);
-
     }
   }
 
-  const resetScanner = () => {
-
-
-  }
   const handleError = err => {
     console.error(err);
   }
@@ -39,13 +33,14 @@ function Ws_Scan() {
         delay={300}
         onResult={handleScan}
       />
-      
+
+
+
       {QrData !== null && (
 
         <div>
         <p>QR Code Data:</p>
         <p>{QrData}</p>
-        <button onClick={resetScanner}>Scan Again</button>
         </div>
       )}
     </div>
