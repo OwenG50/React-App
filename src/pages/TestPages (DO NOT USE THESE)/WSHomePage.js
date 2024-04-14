@@ -8,17 +8,13 @@ function WorkStudyHome() {
         navigate('/BookListings')
     };
 
-    function libraryInventory() {
-
-    };
-
     function addBook() {
         navigate('/WS_AddBook.js');
 
     };
 
     function removeBook() {
-
+        navigate ('/RemoveBookFromLibrary.js');
     };
 
     function checkOut() {
