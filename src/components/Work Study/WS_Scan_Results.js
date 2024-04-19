@@ -6,13 +6,13 @@ function WS_Scan_Results(props) {
 
     //console.log(QrData);
 
-return (
-    <div>
-        <p>{ QrData }</p>
-        <p>Results Page!</p>
-    </div>
+    return (
+        <div>
+            <p>{ QrData }</p>
+            <p>Results Page!</p>
+        </div>
 
-     )
-}
+         )
+    }
 
 export default WS_Scan_Results;
