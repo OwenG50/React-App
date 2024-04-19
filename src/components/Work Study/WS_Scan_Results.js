@@ -10,7 +10,7 @@ function WS_Scan_Results(props) {
     useEffect(() => {
         const timer = setTimeout(() => {
             setReload(prev => !prev); // Toggle the state to force re-render
-        }, 1000); // Set the timer for 1 second
+        }, 5000); // Set the timer for 5 second
 
         return () => clearTimeout(timer); // Clean up the timer
     }, [reload]); // Depend on `reload` to reset the timer if needed
