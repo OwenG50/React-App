@@ -11,6 +11,7 @@
     z-index: 1000;
 }
 
+
 .modal {
     background: white;
     padding: 20px;
@@ -21,7 +22,7 @@
 
 .modal-header {
     display: flex;
-    justify-content: flex-end;
+    
 }
 
 .modal-close-button {
@@ -29,8 +30,20 @@
     background: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: black;
+    
 }
 
 .modal-body {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.modal-body-title {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

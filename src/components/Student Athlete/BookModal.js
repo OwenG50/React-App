@@ -62,8 +62,11 @@ const BookModal = ({ isOpen, book, onClose }) => {
                         &times;
                     </button>
                 </div>
+                
+                
+
                 <div className="modal-body">
-                    <h2>{book.title}</h2>
+                    <h2 className='modal-body-title'>{book.title}</h2>
                     <p><strong>Author(s):</strong> {book.authors}</p>
                     <p><strong>Edition:</strong> {book.edition}</p>
                     <p><strong>ISBN:</strong> {book.isbn}</p>

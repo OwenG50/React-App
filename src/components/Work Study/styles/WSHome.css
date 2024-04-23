@@ -13,7 +13,8 @@
     flex-direction: column; /* Stacks children (buttons) vertically */
     align-items: center; /* Center children horizontally */
     justify-content: center; /* Center children vertically */
-    height: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
     margin-top: 25px;
     flex: auto;
 }
@@ -40,6 +41,6 @@
     box-sizing: border-box;
     font-family: 'Times New Roman';
     font-size: 20px;
-
+    flex: auto;
 }
 
