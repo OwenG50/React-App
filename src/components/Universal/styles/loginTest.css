@@ -1,74 +1,93 @@
-/* SignInWithMicrosoft.css */
+/* loginTest.css */
 
-.RegisterContainer{
+/* Base styles */
+.LoginContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 30%;
   margin: auto;
   padding: 20px;
-  background-color: rgba(167, 0, 52, .8);
+  background-color: rgba(167, 0, 52, 0.8);
   border-radius: 12px;
   margin-top: 10%;
 }
 
-.LoginContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-  margin: auto;
-  padding: 20px;
-  background-color: rgba(167, 0, 52, .8);
-  border-radius: 12px;
-  margin-top: 10%;
+h1 {
+  text-align: center;
+  color: white;
 }
 
-  .registration,
-  .login {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-  }
-  
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="password"],
+input[type="email"] {
+  width: auto;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  color: black;
+}
+
+button {
+  background-color: grey;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin: 8px;
+  width: 40%;
+  font-size: 12pt;
+}
+
+button:hover {
+  background-color: darkgrey;
+}
+
+.register {
+  color: white;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  /* Adjust font size for smaller screens */
   h1 {
-    text-align: center;
-    color: white;
+    font-size: 18px;
   }
-  
-  label {
-    display: block;
-    margin-bottom: 10px;
-    
-  }
+
+  label,
   input[type="password"],
   input[type="email"] {
-    width: auto;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    color: black;
-  }
-  
-  button {
-    background-color: grey;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    margin: 8px; /* Adjusted to add space between buttons */
-    width: 40%;
-    font-size: 12pt;
-  }
-  
-  button:hover {
-    background-color: darkgrey;
+    font-size: 14px;
   }
 
-  .register{
-    color:white;
-    
+  button {
+    font-size: 10pt;
   }
-  
+}
+
+@media only screen and (max-width: 480px) {
+  /* Further adjustments for smaller screens */
+  .LoginContainer {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  label,
+  input[type="password"],
+  input[type="email"] {
+    font-size: 12px;
+  }
+
+  button {
+    width: 60%;
+    font-size: 8pt;
+  }
+}
