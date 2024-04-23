@@ -15,6 +15,7 @@
     justify-content: center; /* Center children vertically */
     height: 100%;
     margin-top: 25px;
+    flex: auto;
 }
 
 /* Styles for each button */
@@ -28,6 +29,7 @@
     margin: 10px; /* Adjusted to add space between buttons */
     width: 40%;
     font-size: 20pt;
+    flex: auto;
 }
 
 .WSForm {

@@ -4,11 +4,12 @@
     /* Styles for the WindowContainer */
     margin: auto;
     margin-top: 10%;
-    width: 30%;
+    width: 40%;
     padding: 20px;
     background-color: rgba(167, 0, 52, .8);
     border-radius: 12px;
-
+    display: flex;
+    flex-direction: column;
 }
 
 .topText {
@@ -35,5 +36,6 @@
     font-size: 20pt;
     display: block;
     margin: 8px auto; /* Center the button horizontally */
+    flex: auto;
 }
 
