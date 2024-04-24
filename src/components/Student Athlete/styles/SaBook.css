@@ -86,12 +86,12 @@
 }
 
 .book-info {
-    flex-grow: 1; /* Allows the book info to grow and fill the space */
-    padding: 0 20px; /* Adds spacing inside the book info */
+    
+    padding: 0 30px; /* Adds spacing inside the book info */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 80%;
+    
 }
 
 .book-info h2, .book-info p {
@@ -99,8 +99,7 @@
     white-space: normal; /* Allows the text to wrap */
     overflow: hidden; /* Ensures content that overflows is hidden, may not be necessary with wrapping */
     text-overflow: ellipsis; /* Adds an ellipsis to indicate clipped text, may not apply as expected with wrapping */
-    word-break: break-word; /* Ensures long words do not cause overflow */
-    max-width: 80%;
+    max-width: 100%;
 }
 
 
@@ -141,10 +140,15 @@
 
 }
 
-@media (max-width: 600px) {
-    .Reserve .scroll .stars .book-condition .search-header .back-button .results-count .book-listing .book-cover .book-info{
+@media (max-width: 800px) {
+    .book-info{
         
         width: 100%;
-        max-height: auto;
+        display: flex;
+        flex-grow: 30;
+        font-size: 10pt;
+        color: hotpink;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
 }
