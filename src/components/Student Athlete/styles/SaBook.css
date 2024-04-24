@@ -140,3 +140,11 @@
     overflow-y: scroll;
 
 }
+
+@media (max-width: 600px) {
+    .Reserve .scroll .stars .book-condition .search-header .back-button .results-count .book-listing .book-cover .book-info{
+        
+        width: 100%;
+        max-height: auto;
+    }
+}

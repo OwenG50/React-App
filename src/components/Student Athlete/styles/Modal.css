@@ -47,3 +47,10 @@
     flex-direction: column;
     align-items: center;
 }
+
+@media (max-width: 600px) {
+    .modal .modal-body .modal-body-title .modal-close-button .modal-header .modal-overlay{
+        width: 100%;
+        max-height: auto;
+    }
+}
