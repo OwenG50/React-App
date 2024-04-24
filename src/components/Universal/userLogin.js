@@ -67,15 +67,17 @@ function Login() {
                 sessionStorage.setItem('role', responseBody.role);
 
 
-                
-                //redirecting based on roles **doesnt work atm need to update!!!!!!!!!!!
+
                 if (responseBody.role === 'admin') {
-                    navigate('/admin');
+                    navigate('/WSHomePage'); //No Admin Page yet
                 } else if (responseBody.role === 'student') {
                     navigate('/SaHome');
                 } else if (responseBody.role === 'work study') {
                     navigate('/WSHomePage');
-                } else {
+                } else if (responseBody.role === 'user'){
+                    navigate('/WSHomePage'); //User Testing Role has access to All Features
+                }
+                else {
                     setMessage({ text: 'Unknown role.', isError: true });
                 }
 
