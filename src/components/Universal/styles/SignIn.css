@@ -32,10 +32,17 @@
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    width: 40%;
+    width: 50%;
     font-size: 20pt;
     display: block;
     margin: 8px auto; /* Center the button horizontally */
     flex: auto;
 }
 
+@media (max-width: 600px) {
+    .LogInButton{
+        
+        width: 100%;
+        max-height: auto;
+    }
+}

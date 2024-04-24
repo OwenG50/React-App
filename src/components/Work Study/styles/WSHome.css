@@ -44,3 +44,9 @@
     flex: auto;
 }
 
+@media (max-width: 600px) {
+    .WSHome .button{
+        background-color: pink;
+    }
+}
+
