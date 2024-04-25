@@ -48,7 +48,7 @@ function BookListings() {
                         <p>Copies Available: {book.copies_available}</p>
                     </div>
                     <div className="book-info">
-                        <h2>Title: {book.title}</h2>
+                        <h2 className='BookTitle'>Title: {book.title}</h2>
                         <p>Author(s): {book.authors}</p>
                         <p>Edition: {book.edition}</p>
                     </div>

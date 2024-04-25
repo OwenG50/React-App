@@ -42,6 +42,7 @@
     margin: 0;
     padding-bottom: 10%;
     background-image: url('./PittCenter_White.jpg');
+    background-color: lightgrey;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
