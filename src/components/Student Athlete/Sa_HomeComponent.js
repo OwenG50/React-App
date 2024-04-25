@@ -1,6 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 
+//Home Page component for Student Athletes
 function SAHome() {
     const navigate = useNavigate();
 

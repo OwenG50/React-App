@@ -2,7 +2,7 @@ import React from 'react';
 import '../Student Athlete/styles/Modal.css'; // Make sure to create the appropriate CSS file
 
 const BookModal = ({ isOpen, book, onClose }) => {
-    // Get user ID from sessionStorage
+    // Get user ID and Email from sessionStorage
     const userID = sessionStorage.getItem('userID');
     const userEmail = sessionStorage.getItem('userEmail');
 
@@ -42,7 +42,7 @@ const BookModal = ({ isOpen, book, onClose }) => {
             alert("An unexpected error occurred and your book could not be reserved", window.location.reload());
         }
 
-        onClose(); // Optionally close the modal after the operation
+        onClose(); // Add functionality
     };
 
     if (!isOpen) {

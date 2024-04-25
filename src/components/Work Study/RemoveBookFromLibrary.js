@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import "./styles/RemoveBook.css";
 
+
+//Handle Deletion of books from Books SQL DB via UUID
 function BookDeleteComponent() {
     const [UUID, setUUID] = useState('');
 

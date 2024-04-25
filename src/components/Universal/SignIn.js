@@ -1,6 +1,8 @@
 import React from "react";
-import SignInWithMicrosoft from "../../components/Universal/SignInWithMicrosoft";
+import SignInWithMicrosoft from "./SignInWithMicrosoft";
 
+
+//Just calls and renders the SignInWithMicrosoft Component
 export function SignIn(){
     return(
       <div>

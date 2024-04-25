@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 
+
+//Component to display the results of the QR Scan data
 function WS_Scan_Results(props) {
     const QrData = sessionStorage.getItem('QrData');
 

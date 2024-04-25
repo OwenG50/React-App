@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import "./styles/loginTest.css"
 
+
+// Handles registering a user, with default role of 'user' //TODO update to register a user with a role
 function UserRegistration() {
     const [formData, setFormData] = useState({
         email: '',

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../Student Athlete/styles/SaBook.css';
 import BookModal from '../Student Athlete/BookModal';
 
+
+// Creates Book listings for each book in the Book Database
 function BookListings() {
     const [books, setBooks] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);

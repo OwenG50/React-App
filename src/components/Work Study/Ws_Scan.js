@@ -4,7 +4,8 @@ import '../Work Study/styles/WS_Scan.css'
 import { useNavigate } from 'react-router-dom';
 
 
-
+// Work Study Scan Component
+// Used to check in and check out books for Work Studys
 function Ws_Scan() {
     const [QrData, setQrData] = useState(null);
     const navigate = useNavigate();

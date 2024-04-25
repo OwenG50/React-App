@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import "./styles/loginTest.css";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import WorkStudyHome from '../../pages/TestPages (DO NOT USE THESE)/WSHomePage';
 
+
+// Handles all User Login in coordination with Lambda Function
 function Login() {
     const [formData, setFormData] = useState({
         email: '',

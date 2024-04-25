@@ -3,6 +3,8 @@ import QRCode from 'react-qr-code';
 import { v4 as uuidv4 } from 'uuid';
 import './styles/WSAddBook.css'
 
+
+//Form to add new book to DB in tandem with Lambda Fn.
 function WsAddBookForm() {
     const [title, setTitle] = useState('');
     const [isbn, setISBN] = useState('');
