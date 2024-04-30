@@ -15,8 +15,8 @@ function Ws_Scan() {
       console.log('Result: ', data);
       setQrData(data.text);
       sessionStorage.setItem('QrData', data.text);
-      navigate('/WS_Scan_Results.js');
       QrReader.deactivate()
+      navigate('/WS_Scan_Results.js');
     }
     else {
         console.log('No QR Code Visible'); 
