@@ -22,11 +22,6 @@ function WorkStudyHome() {
 
     };
 
-    function checkIn() {
-
-    };
-    
-
 
     return (
         <div className="WindowContainer">
@@ -42,10 +37,7 @@ function WorkStudyHome() {
                 Remove Book
             </button>
             <button className="LogInButton" onClick={checkOut}>
-                Check Out
-            </button>
-            <button className="LogInButton" onClick={checkIn}>
-                Check In
+                Check In / Out
             </button>
         </div>
     );

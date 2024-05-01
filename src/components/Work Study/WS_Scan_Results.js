@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import './styles/WS_ScanResults.css'
 
 function WS_Scan_Results() {
     const [responseStatus, setResponseStatus] = useState(null);
     const [bodyData, setBodyData] = useState(null);
     const [payloadSent, setPayloadSent] = useState(0); 
-    const [readableStatus, setReadableStatus] = useState(''); // Declare readableStatus state variable
+    const [currentStatus, setCurrentStatus] = useState('');
+    const [previousStatus, setPreviousStatus] = useState('');
+    const [title, setTitle] = useState('');
     const QrData = sessionStorage.getItem('QrData');
     const userID = sessionStorage.getItem('userID');
 
@@ -37,26 +40,32 @@ function WS_Scan_Results() {
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify(payload) // Correctly format the body as a JSON string
+                        body: JSON.stringify(payload) 
                     });
                     
                     console.log(response)
                     console.log(response.status, response.body);
-                    setResponseStatus(response.status); // Update the state with the response status
+                    setResponseStatus(response.status); 
                     const responseBody = await response.json();
                     console.log(responseBody);
                     setBodyData(JSON.stringify(responseBody));
 
                     if (response.status === 200) {
                         const { status } = JSON.parse(responseBody.body);
-                        let readableStatus;
+                        const { title } = JSON.parse(responseBody.body);
+                        let currentStatus;
+                        let previousStatus;
                         if (status === 0) {
-                            readableStatus = 'Checked In';
+                            currentStatus = 'Checked In';
+                            previousStatus = 'Checked Out';
                         } else {
-                            readableStatus = 'Checked Out'; 
+                            currentStatus = 'Checked Out';
+                            previousStatus = 'Checked In'; 
                         }
-                        setReadableStatus(readableStatus); // Update readableStatus state variable
-                        alert(`Status Successfully Changed: ${readableStatus}`);
+                        setCurrentStatus(currentStatus); 
+                        setPreviousStatus(previousStatus);
+                        setTitle(title); 
+                        //alert(`Status Successfully Changed: ${currentStatus}`);
                         return;
                     } else if (response.status === 400) {
                         alert("The book does not exist in the Database");
@@ -76,12 +85,10 @@ function WS_Scan_Results() {
     }, [QrData, userID, payloadSent]); // Include QrData, userID, and payloadSent in the dependencies array
 
     return (
-        <div>
-            <p>{QrData}</p>
-            <p>{userID}</p>
-            {responseStatus && <p>Response Status: {responseStatus}</p>}
-            {bodyData && <p>Body: {bodyData}</p>}
-            {readableStatus && <p>Readable Status: {readableStatus}</p>} {/* Render readableStatus */}
+        <div className="WSResults">
+            {title && <p>Book: {title}</p>}
+            {previousStatus && <p>Previous Status: {previousStatus}</p>}
+            {currentStatus && <p>Current Status: {currentStatus}</p>} 
         </div>
     );
 }
