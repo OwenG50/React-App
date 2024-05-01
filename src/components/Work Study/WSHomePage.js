@@ -33,9 +33,6 @@ function WorkStudyHome() {
             <button className="LogInButton" onClick={addBook}>
                 Add Book
             </button>
-            <button className="LogInButton" onClick={removeBook}>
-                Remove Book
-            </button>
             <button className="LogInButton" onClick={checkOut}>
                 Check In / Out
             </button>
