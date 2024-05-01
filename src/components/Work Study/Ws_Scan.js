@@ -12,11 +12,13 @@ function Ws_Scan() {
 
     const handleScan = data => {
     if (data) {
+      sessionStorage.setItem('QrData', data.text);
       console.log('Result: ', data);
       setQrData(data.text);
-      sessionStorage.setItem('QrData', data.text);
-      QrReader.deactivate()
+      //sessionStorage.setItem('QrData', data.text);
       navigate('/WS_Scan_Results.js');
+      QrReader.deactivate()
+      return;
     }
     else {
         console.log('No QR Code Visible'); 
