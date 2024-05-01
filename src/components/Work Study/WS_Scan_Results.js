@@ -4,6 +4,7 @@ function WS_Scan_Results() {
     const [responseStatus, setResponseStatus] = useState(null);
     const [bodyData, setBodyData] = useState(null);
     const [payloadSent, setPayloadSent] = useState(0); 
+    const [readableStatus, setReadableStatus] = useState(''); // Declare readableStatus state variable
     const QrData = sessionStorage.getItem('QrData');
     const userID = sessionStorage.getItem('userID');
 
@@ -36,7 +37,7 @@ function WS_Scan_Results() {
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({ body: payload }) // Correctly format the body as a JSON string
+                        body: JSON.stringify(payload) // Correctly format the body as a JSON string
                     });
                     
                     console.log(response)
@@ -47,7 +48,15 @@ function WS_Scan_Results() {
                     setBodyData(JSON.stringify(responseBody));
 
                     if (response.status === 200) {
-                        alert("Status Successfully Changed"); 
+                        const { status } = JSON.parse(responseBody.body);
+                        let readableStatus;
+                        if (status === 0) {
+                            readableStatus = 'Checked In';
+                        } else {
+                            readableStatus = 'Checked Out'; 
+                        }
+                        setReadableStatus(readableStatus); // Update readableStatus state variable
+                        alert(`Status Successfully Changed: ${readableStatus}`);
                         return;
                     } else if (response.status === 400) {
                         alert("The book does not exist in the Database");
@@ -72,6 +81,7 @@ function WS_Scan_Results() {
             <p>{userID}</p>
             {responseStatus && <p>Response Status: {responseStatus}</p>}
             {bodyData && <p>Body: {bodyData}</p>}
+            {readableStatus && <p>Readable Status: {readableStatus}</p>} {/* Render readableStatus */}
         </div>
     );
 }
